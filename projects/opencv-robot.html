@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="OpenCV Robot Camera Perception: a vision-guided Meca robot arm project by Tasnia Chowdhury.">
+
+    <title>OpenCV Robot Camera Perception | Tasnia Chowdhury</title>
+
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <a href="../index.html" class="logo">TC</a>
+
+        <div class="nav-links">
+            <a href="../index.html#work">Work</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#experience">Experience</a>
+            <a href="../index.html#contact">Contact</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+    <article class="project-detail">
+
+        <!-- BACK TO PROJECTS -->
+        <a href="../index.html#work" class="back-link">
+            ← Back to Projects
+        </a>
+
+        <!-- PROJECT HEADER -->
+        <header class="project-detail-header">
+            <p class="eyebrow">PROJECT 01 · COMPUTER VISION &amp; ROBOTICS</p>
+
+            <h1>OpenCV Robot Camera Perception</h1>
+
+            <p class="project-detail-intro">
+                Developed a camera-based perception system using OpenCV
+                to detect and locate a plate, calculate its position
+                relative to the robot, and control the robot arm to move
+                to and grip the object.
+            </p>
+
+            <div class="tags">
+                <span>OpenCV</span>
+                <span>Computer Vision</span>
+                <span>Meca Robot</span>
+                <span>Microcontroller</span>
+                <span>Robot Control</span>
+            </div>
+        </header>
+
+        <!-- MAIN PROJECT IMAGE -->
+        <div class="project-detail-hero">
+            <img
+                src="../assets/images/opencv-robot.jpg"
+                alt="Camera-guided Meca robot perception project"
+            >
+        </div>
+
+        <!-- OVERVIEW -->
+        <section class="project-detail-section">
+            <h2>Overview</h2>
+
+            <p>
+                This project explores how camera-based perception can
+                guide a robotic arm to locate and grasp an object.
+                OpenCV is used to detect the target plate in the camera
+                image, and the detected position is used to guide the
+                robot toward the object.
+            </p>
+
+            <p>
+                The project brings together computer vision, position
+                estimation, robot motion, and hardware control to connect
+                visual information with physical interaction.
+            </p>
+        </section>
+
+        <!-- OBJECTIVE -->
+        <section class="project-detail-section">
+            <h2>Objective</h2>
+
+            <p>
+                Enable a robot arm to identify a plate using a camera
+                and move to the plate's center to perform a grasp,
+                rather than relying exclusively on a predefined
+                target position.
+            </p>
+        </section>
+
+        <!-- SYSTEM COMPONENTS -->
+        <section class="project-detail-section">
+            <h2>System Architecture</h2>
+
+            <div class="project-detail-grid">
+
+                <div class="detail-panel">
+                    <h3>Vision System</h3>
+
+                    <p>
+                        A camera captures the scene, and OpenCV processes
+                        the image to detect and locate the target plate.
+                    </p>
+                </div>
+
+                <div class="detail-panel">
+                    <h3>Position Estimation</h3>
+
+                    <p>
+                        The detected target position is used to determine
+                        where the robot needs to move relative to the
+                        plate.
+                    </p>
+                </div>
+
+                <div class="detail-panel">
+                    <h3>Robot Control</h3>
+
+                    <p>
+                        The position estimate guides the Meca robot arm
+                        toward the target for grasping.
+                    </p>
+                </div>
+
+                <div class="detail-panel">
+                    <h3>Hardware Interface</h3>
+
+                    <p>
+                        A microcontroller is part of the hardware
+                        control setup connecting the project components.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- VISION -->
+        <section class="project-detail-section">
+            <h2>Computer Vision</h2>
+
+            <p>
+                OpenCV provides the image-processing component of the
+                system. The goal is to identify the plate in the camera
+                image and determine its center so that the robot can
+                use the detected target position.
+            </p>
+
+            <p>
+                The perception stage connects camera observations to
+                the downstream positioning and grasping task.
+            </p>
+        </section>
+
+        <!-- ROBOT CONTROL -->
+        <section class="project-detail-section">
+            <h2>Robot Positioning &amp; Grasping</h2>
+
+            <p>
+                After locating the plate, the system uses its estimated
+                position relative to the robot to guide arm movement
+                toward the center of the target. The intended outcome
+                is to position the robot for gripping the object.
+            </p>
+
+            <p>
+                This connects the perception output to a physical
+                manipulation task, bringing together vision and
+                robotic motion control.
+            </p>
+        </section>
+
+        <!-- HARDWARE AND SOFTWARE -->
+        <section class="project-detail-section">
+            <h2>Hardware &amp; Software</h2>
+
+            <div class="project-detail-grid">
+
+                <div class="detail-panel">
+                    <h3>Hardware</h3>
+
+                    <ul>
+                        <li>Meca robot arm</li>
+                        <li>Camera</li>
+                        <li>Microcontroller</li>
+                        <li>Target plate and grasping setup</li>
+                    </ul>
+                </div>
+
+                <div class="detail-panel">
+                    <h3>Software &amp; Control</h3>
+
+                    <ul>
+                        <li>OpenCV</li>
+                        <li>Image-based target detection</li>
+                        <li>Position estimation</li>
+                        <li>Robot motion and grasping</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- RESULTS -->
+        <section class="project-detail-section">
+            <h2>Outcome</h2>
+
+            <p>
+                The project demonstrates a vision-guided robotics
+                workflow in which a camera identifies an object's
+                location and that information is used to guide the
+                robot arm toward a grasping position.
+            </p>
+
+            <p>
+                The result is an integrated perception-to-action
+                approach that connects computer vision with
+                physical robot manipulation.
+            </p>
+        </section>
+
+        <!-- OPTIONAL PROJECT MEDIA -->
+        <section class="project-detail-section">
+            <h2>Project Gallery</h2>
+
+            <p>
+                Add additional images below to show the camera setup,
+                target detection, robot positioning, and final grasp.
+            </p>
+
+            <div class="project-detail-grid">
+
+                <div>
+                    <div class="project-gallery-image">
+                        <img
+                            src="../assets/images/opencv-camera.jpg"
+                            alt="Camera and vision setup"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <p class="gallery-caption">Camera setup</p>
+                </div>
+
+                <div>
+                    <div class="project-gallery-image">
+                        <img
+                            src="../assets/images/opencv-grasp.jpg"
+                            alt="Robot arm positioning for object grasping"
+                            loading="lazy"
+                        >
+                    </div>
+
+                    <p class="gallery-caption">Robot grasping</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- NAVIGATION -->
+        <div class="project-detail-footer">
+            <a href="../index.html#work">← All Projects</a>
+            <a href="../index.html">Home</a>
+        </div>
+
+    </article>
+
+</main>
+
+<footer>
+    <p>© 2026 Tasnia Chowdhury</p>
+</footer>
+
+</body>
+</html>

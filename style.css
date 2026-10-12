@@ -68,8 +68,7 @@ nav {
 
 
 /* =========================
-   HERO SECTION
-   TEXT LEFT, IMAGE RIGHT
+   HERO
 ========================= */
 
 .hero {
@@ -108,8 +107,6 @@ h1 {
     margin-bottom: 35px;
 }
 
-/* Profile image container */
-
 .hero-image {
     flex: 0 0 340px;
     width: 340px;
@@ -118,8 +115,6 @@ h1 {
     border-radius: 16px;
     background: #e5e5e0;
 }
-
-/* Profile image */
 
 .hero-image img {
     display: block;
@@ -145,9 +140,7 @@ h1 {
     padding: 13px 22px;
     border: 1px solid #171717;
     font-size: 14px;
-    transition:
-        background 0.2s ease,
-        color 0.2s ease;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .primary {
@@ -223,7 +216,7 @@ h2 {
 
 
 /* =========================
-   PROJECTS
+   PROJECT CARDS
 ========================= */
 
 .projects {
@@ -239,6 +232,7 @@ h2 {
 }
 
 .project-image {
+    display: block;
     height: 300px;
     background: #ddd;
     overflow: hidden;
@@ -287,6 +281,30 @@ h2 {
     border: 1px solid #ccc;
     padding: 5px 9px;
     font-size: 11px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 25px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #171717;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.project-link span {
+    display: inline-block;
+    transition: transform 0.2s ease;
+}
+
+.project-link:hover span {
+    transform: translateX(4px);
+}
+
+.project-image-link:focus-visible,
+.project-link:focus-visible {
+    outline: 2px solid #171717;
+    outline-offset: 4px;
 }
 
 
@@ -384,6 +402,134 @@ h2 {
 
 
 /* =========================
+   PROJECT DETAIL PAGES
+========================= */
+
+.project-detail {
+    max-width: 1000px;
+    margin: auto;
+    padding: 55px 6% 110px;
+}
+
+.back-link {
+    display: inline-block;
+    margin-bottom: 45px;
+    font-size: 14px;
+    color: #555;
+}
+
+.back-link:hover {
+    color: #171717;
+}
+
+.project-detail-header {
+    max-width: 850px;
+    margin-bottom: 45px;
+}
+
+.project-detail-header h1 {
+    font-size: clamp(42px, 6vw, 72px);
+    letter-spacing: -3px;
+    line-height: 1.02;
+    margin-bottom: 25px;
+}
+
+.project-detail-intro {
+    font-size: 20px;
+    color: #555;
+    max-width: 760px;
+}
+
+.project-detail-hero {
+    width: 100%;
+    height: 480px;
+    overflow: hidden;
+    background: #e5e5e0;
+    margin-bottom: 65px;
+}
+
+.project-detail-hero img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-detail-section {
+    max-width: 780px;
+    margin-bottom: 55px;
+}
+
+.project-detail-section h2 {
+    font-size: 32px;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.project-detail-section p {
+    color: #555;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.project-detail-section ul {
+    padding-left: 24px;
+    color: #555;
+}
+
+.project-detail-section li {
+    margin-bottom: 10px;
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    margin-bottom: 55px;
+}
+
+.detail-panel {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 28px;
+}
+
+.detail-panel h3 {
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.detail-panel p,
+.detail-panel li {
+    color: #555;
+    font-size: 15px;
+}
+
+.detail-panel ul {
+    padding-left: 20px;
+}
+
+.detail-panel li {
+    margin-bottom: 8px;
+}
+
+.project-detail-footer {
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.project-detail-footer a {
+    display: inline-block;
+    margin-right: 25px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #171717;
+    padding-bottom: 3px;
+    font-size: 14px;
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 
@@ -446,6 +592,10 @@ footer {
     .experience {
         gap: 40px;
     }
+
+    .project-detail-hero {
+        height: 380px;
+    }
 }
 
 
@@ -462,8 +612,6 @@ footer {
     .nav-links {
         display: none;
     }
-
-    /* Stack hero text and image vertically */
 
     .hero {
         flex-direction: column;
@@ -505,8 +653,6 @@ footer {
         padding: 12px 16px;
     }
 
-    /* Metrics */
-
     .metrics {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         padding: 25px 6%;
@@ -530,8 +676,6 @@ footer {
         font-size: 34px;
     }
 
-    /* Sections */
-
     .section {
         padding: 75px 6%;
     }
@@ -541,8 +685,6 @@ footer {
         letter-spacing: -2px;
         margin-bottom: 40px;
     }
-
-    /* Projects */
 
     .projects {
         grid-template-columns: 1fr;
@@ -560,8 +702,6 @@ footer {
         font-size: 24px;
     }
 
-    /* About */
-
     .about {
         margin-left: 0;
         margin-right: 0;
@@ -571,14 +711,10 @@ footer {
         font-size: 18px;
     }
 
-    /* Skills */
-
     .skills-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 30px 20px;
     }
-
-    /* Experience */
 
     .experience {
         grid-template-columns: 1fr;
@@ -589,8 +725,6 @@ footer {
     .experience h3 {
         font-size: 26px;
     }
-
-    /* Contact */
 
     .contact {
         padding: 85px 6%;
@@ -606,7 +740,47 @@ footer {
         gap: 20px;
     }
 
-    /* Footer */
+    .project-detail {
+        padding-top: 35px;
+        padding-bottom: 75px;
+    }
+
+    .back-link {
+        margin-bottom: 35px;
+    }
+
+    .project-detail-header h1 {
+        font-size: clamp(40px, 10vw, 56px);
+        letter-spacing: -2px;
+    }
+
+    .project-detail-intro {
+        font-size: 18px;
+    }
+
+    .project-detail-hero {
+        height: 300px;
+        margin-bottom: 45px;
+    }
+
+    .project-detail-section {
+        margin-bottom: 40px;
+    }
+
+    .project-detail-section h2 {
+        font-size: 28px;
+        margin-bottom: 18px;
+    }
+
+    .project-detail-section p {
+        font-size: 16px;
+    }
+
+    .project-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-bottom: 40px;
+    }
 
     footer {
         padding: 25px 6%;
@@ -639,5 +813,9 @@ footer {
     .buttons {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .project-detail-hero {
+        height: 240px;
     }
 }
