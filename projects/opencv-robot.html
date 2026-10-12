@@ -1,21 +1,16 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="description"
-          content="Camera-guided robotic alignment using OpenCV, Raspberry Pi, MQTT, PID control, and a Mecademic 6-DoF robot arm.">
-
+          content="OpenCV Robot Camera Perception: a camera vision project using Raspberry Pi, OpenCV, and a Mecademic 6-DoF robot arm.">
     <title>OpenCV Robot Camera Perception | Tasnia Chowdhury</title>
-
     <link rel="stylesheet" href="../style.css">
 
     <style>
         /* PROJECT-SPECIFIC STYLES */
-
         .project-highlight {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -115,7 +110,30 @@
             font-size: 13px;
         }
 
-        .image-comparison,
+        .image-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .image-comparison figure {
+            min-width: 0;
+        }
+
+        .image-comparison img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border: 1px solid #ddd;
+        }
+
+        .image-comparison figcaption {
+            margin-top: 10px;
+            font-size: 13px;
+            color: #777;
+        }
+
         .vision-gallery {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -123,13 +141,10 @@
             margin: 30px 0;
         }
 
-        .image-comparison figure,
         .vision-gallery figure {
             min-width: 0;
-            margin: 0;
         }
 
-        .image-comparison img,
         .vision-gallery img {
             display: block;
             width: 100%;
@@ -137,55 +152,10 @@
             border: 1px solid #ddd;
         }
 
-        .image-comparison figcaption,
         .vision-gallery figcaption {
             margin-top: 10px;
             color: #777;
             font-size: 13px;
-        }
-
-        .pid-equation {
-            padding: 28px 20px;
-            margin: 25px 0;
-            background: #f5f5f2;
-            border: 1px solid #ddd;
-            text-align: center;
-            overflow-x: auto;
-        }
-
-        .pid-equation code {
-            font-size: 16px;
-            color: #171717;
-            white-space: nowrap;
-        }
-
-        .pid-equation p {
-            font-size: 13px;
-            color: #777;
-            margin-top: 12px;
-        }
-
-        .control-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 15px;
-            margin: 25px 0;
-        }
-
-        .control-card {
-            padding: 22px;
-            border: 1px solid #ddd;
-            background: white;
-        }
-
-        .control-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .control-card p {
-            font-size: 14px;
-            color: #555;
         }
 
         .cost-table {
@@ -215,11 +185,9 @@
         }
 
         @media (max-width: 700px) {
-            .project-highlight,
-            .control-grid,
-            .image-comparison,
-            .vision-gallery {
+            .project-highlight {
                 grid-template-columns: 1fr;
+                gap: 10px;
             }
 
             .workflow {
@@ -228,6 +196,11 @@
 
             .workflow-arrow {
                 transform: rotate(90deg);
+            }
+
+            .image-comparison,
+            .vision-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -250,7 +223,6 @@
 </header>
 
 <main>
-
 <article class="project-detail">
 
     <!-- BACK LINK -->
@@ -268,24 +240,25 @@
         <h1>OpenCV Robot Camera Perception</h1>
 
         <p class="project-detail-intro">
-            Developed a camera-guided robotic alignment system
-            using OpenCV, Raspberry Pi, and PID feedback control
-            to automatically position a Mecademic 6-DoF robot arm
-            over the center of an SBS-format plate.
+            Developed a camera vision robotic system
+            using OpenCV and Raspberry Pi to detect a plate's
+            center and automatically guide a Mecademic 6-DoF robot arm
+            toward the target position.
         </p>
 
         <div class="tags">
             <span>Python</span>
             <span>OpenCV</span>
             <span>Raspberry Pi</span>
-            <span>PID Control</span>
-            <span>MQTT</span>
+            <span>Computer Vision</span>
             <span>Mecademic Robot</span>
+            <span>Robot Control</span>
+            <span>PID Control</span>
         </div>
 
     </div>
 
-    <!-- MAIN IMAGE -->
+    <!-- MAIN PROJECT IMAGE -->
     <div class="project-detail-hero">
         <img
             src="../assets/images/opencv_project_images/opencv-robot.jpg"
@@ -302,13 +275,8 @@
         </div>
 
         <div class="highlight-item">
-            <strong>PID</strong>
-            <span>Feedback-based position control</span>
-        </div>
-
-        <div class="highlight-item">
-            <strong>5 mm</strong>
-            <span>Maximum correction per movement command</span>
+            <strong>OpenCV</strong>
+            <span>Image processing and target detection</span>
         </div>
 
     </div>
@@ -319,10 +287,9 @@
         <h2>Overview</h2>
 
         <p>
-            This project developed a camera-based perception
-            and control system to automatically align a
-            Mecademic robotic arm with the center of an
-            SBS-format plate.
+            This project developed a camera vision perception
+            system to automatically align a Mecademic robotic arm
+            with the center of an SBS-format plate.
         </p>
 
         <p>
@@ -332,12 +299,10 @@
         </p>
 
         <p>
-            The detected X and Y positional offsets are
-            transmitted to a Python-based robot driver
-            using MQTT. A PID feedback controller uses
-            the measured error to calculate incremental
-            robot movements, progressively aligning the
-            camera with the plate center.
+            The calculated positional offsets are sent
+            to the robot driver via MQTT IoT protocol. The Python based
+            robot driver then sends incremental move commands till robot is
+            within a certain tolerance of center of plate.
         </p>
 
     </section>
@@ -362,10 +327,8 @@
         <h2>System Architecture</h2>
 
         <p>
-            The system combines image processing,
-            network communication, and feedback control
-            to translate camera observations into
-            corrective robot movements.
+            The system follows a perception-to-motion pipeline
+            that connects camera observations to robot movement.
         </p>
 
         <div class="workflow">
@@ -378,45 +341,38 @@
             <div class="workflow-arrow" aria-hidden="true">→</div>
 
             <div class="workflow-step">
-                <strong>OpenCV</strong>
+                <strong>Raspberry Pi</strong>
+                <span>OpenCV processing</span>
+            </div>
+
+            <div class="workflow-arrow" aria-hidden="true">→</div>
+
+            <div class="workflow-step">
+                <strong>Position Offset</strong>
                 <span>Calculate dx, dy</span>
             </div>
 
             <div class="workflow-arrow" aria-hidden="true">→</div>
 
             <div class="workflow-step">
-                <strong>MQTT</strong>
-                <span>Transmit offsets</span>
-            </div>
-
-            <div class="workflow-arrow" aria-hidden="true">→</div>
-
-            <div class="workflow-step">
-                <strong>PID</strong>
-                <span>Compute correction</span>
-            </div>
-
-            <div class="workflow-arrow" aria-hidden="true">→</div>
-
-            <div class="workflow-step">
-                <strong>Robot</strong>
-                <span>Execute movement</span>
+                <strong>Meca Robot</strong>
+                <span>Execute correction</span>
             </div>
 
         </div>
 
         <div class="technical-note">
-            After a corrective movement, the camera provides
-            an updated measurement of the target position.
-            The feedback loop repeats until the measured
-            positional error falls within the alignment
-            tolerance.
+            The Raspberry Pi publishes detected pixel offsets
+            to a network endpoint. A script running with the
+            Meca driver subscribes to the values and commands
+            the robot to correct its position.
         </div>
 
+        <!-- SYSTEM SETUP IMAGE -->
         <figure class="project-media">
             <img
                 src="../assets/images/opencv_project_images/opencv-setup.jpg"
-                alt="Camera and Mecademic robot system setup"
+                alt="Camera and Meca robot system setup"
                 loading="lazy"
             >
             <figcaption>
@@ -451,7 +407,7 @@
             <div class="detail-panel">
                 <h3>Robot &amp; Controller</h3>
                 <ul>
-                    <li>Mecademic 6-DoF robotic arm</li>
+                    <li>Meca robotic arm</li>
                     <li>Raspberry Pi</li>
                     <li>Camera mounting hardware</li>
                     <li>SBS-format target plate</li>
@@ -474,10 +430,12 @@
             <figure>
                 <img
                     src="../assets/images/opencv_project_images/opencv-mount-design.jpg"
-                    alt="Camera mounting design"
+                    alt="CAD design of camera mount"
                     loading="lazy"
                 >
-                <figcaption>Camera mounting design</figcaption>
+                <figcaption>
+                    Camera mounting design.
+                </figcaption>
             </figure>
 
             <figure>
@@ -486,7 +444,9 @@
                     alt="Physical camera mounting hardware"
                     loading="lazy"
                 >
-                <figcaption>Camera mounting hardware</figcaption>
+                <figcaption>
+                    Camera mounting hardware.
+                </figcaption>
             </figure>
 
         </div>
@@ -509,12 +469,14 @@
 
             <li>
                 <strong>Image acquisition:</strong>
-                Capture an image using the Raspberry Pi camera.
+                Capture an image of the plate using
+                the Raspberry Pi camera.
             </li>
 
             <li>
                 <strong>Grayscale conversion:</strong>
-                Convert the image to grayscale.
+                Convert the image to grayscale for
+                further processing.
             </li>
 
             <li>
@@ -531,7 +493,7 @@
 
             <li>
                 <strong>Center marker detection:</strong>
-                Invert the image colors to identify
+                Invert the image colors to detect
                 the black marker inside the plate.
             </li>
 
@@ -544,6 +506,7 @@
 
         </ol>
 
+        <!-- COMPUTER VISION IMAGES -->
         <div class="vision-gallery">
 
             <figure>
@@ -614,123 +577,61 @@
     <!-- PID CONTROL -->
     <section class="project-detail-section">
 
-        <h2>PID Control &amp; Robot Positioning</h2>
+        <h2>PID Feedback Control</h2>
 
         <p>
-            A Proportional-Integral-Derivative (PID)
-            controller was used to calculate corrective
-            robot movements based on the positional
-            error detected by the camera.
+            A Proportional-Integral-Derivative (PID) controller was used
+            to position the robot over the object's center. The OpenCV
+            algorithm calculates the X and Y offsets between the camera
+            center and the plate marker. These measured offsets serve as
+            the feedback error for the positioning controller.
         </p>
 
         <p>
-            The controller receives the measured X and Y
-            offsets between the camera center and the
-            target marker. These offsets represent the
-            alignment error that the robot must reduce.
+            The Raspberry Pi publishes the detected offsets through MQTT.
+            The Python-based robot driver subscribes to the measurements
+            and uses PID control to determine the next incremental robot
+            position correction.
         </p>
 
-        <h3>PID Control Mechanism</h3>
-
-        <div class="pid-equation">
-            <code>
-                u(t) = Kp·e(t) + Ki·∫e(t)dt + Kd·de(t)/dt
-            </code>
-            <p>
-                Standard continuous-time PID control equation
-            </p>
-        </div>
-
-        <div class="control-grid">
-
-            <div class="control-card">
-                <h3>Proportional (P)</h3>
-                <p>
-                    Produces a correction proportional to
-                    the current position error. Larger
-                    offsets result in stronger corrections.
-                </p>
-            </div>
-
-            <div class="control-card">
-                <h3>Integral (I)</h3>
-                <p>
-                    Accumulates error over time to help
-                    compensate for persistent alignment
-                    offsets and reduce steady-state error.
-                </p>
-            </div>
-
-            <div class="control-card">
-                <h3>Derivative (D)</h3>
-                <p>
-                    Responds to how quickly the error
-                    changes, helping damp oscillation
-                    and reduce overshoot near the target.
-                </p>
-            </div>
-
-        </div>
-
-        <h3>Closed-Loop Positioning</h3>
-
-        <p>
-            Rather than relying on a single position
-            correction, the robot uses updated camera
-            measurements to repeatedly adjust its
-            position toward the target.
-        </p>
+        <h3>How the Controller Works</h3>
 
         <ol class="technical-steps">
 
             <li>
-                <strong>Measure error:</strong>
-                OpenCV detects the plate marker and
-                calculates its X/Y displacement from
-                the camera center.
+                <strong>Measure position error:</strong>
+                OpenCV returns the marker's X/Y displacement from the
+                camera center in pixels.
             </li>
 
             <li>
-                <strong>Transmit feedback:</strong>
-                The Raspberry Pi publishes the
-                detected offsets through MQTT.
+                <strong>Calculate PID correction:</strong>
+                The proportional term responds to the current error,
+                the integral term accounts for accumulated error, and
+                the derivative term responds to changes in error.
             </li>
 
             <li>
-                <strong>Calculate control output:</strong>
-                The PID controller processes the
-                position error to determine the
-                next corrective movement.
+                <strong>Command a bounded movement:</strong>
+                The robot driver converts the controller output into
+                an incremental movement command, with corrections
+                capped at 5 mm per command.
             </li>
 
             <li>
-                <strong>Limit movement:</strong>
-                Movement corrections are capped
-                at 5 mm per command.
-            </li>
-
-            <li>
-                <strong>Move robot:</strong>
-                The Python robot driver sends the
-                incremental movement command to
-                the Mecademic arm.
-            </li>
-
-            <li>
-                <strong>Repeat until aligned:</strong>
-                Updated camera measurements are
-                used to calculate subsequent corrections
-                until the error is within tolerance.
+                <strong>Update feedback:</strong>
+                The camera measures the remaining offset after the
+                movement. The process repeats until the error is
+                within the alignment tolerance.
             </li>
 
         </ol>
 
         <div class="technical-note">
-            <strong>Control objective:</strong>
-            Minimize the X and Y positional error
-            between the camera center and the plate
-            marker while limiting each commanded
-            robot movement.
+            <strong>Closed-loop control:</strong>
+            Camera measurement → MQTT position error → PID correction
+            → robot movement → updated camera measurement.
+            The PID gains and tuning values are not shown here.
         </div>
 
     </section>
@@ -743,43 +644,35 @@
         <p>
             The Raspberry Pi runs the OpenCV algorithm
             and publishes the detected pixel displacement
-            values (dx, dy) through MQTT.
+            values (dx, dy) to a network endpoint.
         </p>
 
         <p>
-            A Python script running on the Mecademic
-            robot driver subscribes to the MQTT
-            messages and processes the positional
-            feedback using the PID controller.
+            A script running on the Meca driver subscribes
+            to these values and uses them to calculate
+            and command robot movement.
         </p>
 
         <p>
-            The controller's output is used to
-            calculate incremental robot movements
-            that reduce the difference between the
-            camera center and the plate marker.
+            The robot moves to reduce the difference
+            between the camera center and the detected
+            plate marker until the camera is positioned
+            over the target.
         </p>
 
         <h3>Movement Limiting</h3>
 
         <p>
-            Each calculated robot movement is limited
-            to a maximum correction of 5 mm.
-            Commands exceeding this limit are capped
-            before being sent to the robot.
-        </p>
-
-        <p>
-            This allows the system to approach the
-            target through multiple bounded corrections
-            rather than a single large movement.
+            The calculated robot movement is limited
+            to a maximum of 5 mm per correction command.
+            Any calculated movement exceeding this
+            threshold is capped at 5 mm.
         </p>
 
         <div class="technical-note">
             <strong>Control strategy:</strong>
-            Vision-based positional feedback,
-            PID correction, and bounded incremental
-            robot movement.
+            Camera-based positional feedback is used
+            to command bounded robot position corrections.
         </div>
 
     </section>
@@ -790,9 +683,9 @@
         <h2>Results</h2>
 
         <p>
-            The system demonstrated automated
-            camera-guided alignment of the Mecademic
-            robotic arm with the plate's center marker.
+            The system demonstrated camera-guided
+            alignment of the Meca robotic arm with
+            the plate's center marker.
         </p>
 
         <p>
@@ -830,7 +723,7 @@
         <figure class="project-media">
             <img
                 src="../assets/images/opencv_project_images/opencv-final.jpg"
-                alt="Final camera-guided Mecademic robot alignment"
+                alt="Final camera-guided Meca robot alignment"
                 loading="lazy"
             >
             <figcaption>
@@ -889,42 +782,42 @@
         </table>
 
         <p>
-            The subtotal excludes the robot arm
-            and other unlisted equipment.
+            This subtotal includes the listed camera,
+            computing, and mounting components.
+            It excludes the robot arm and other
+            unlisted equipment.
         </p>
 
     </section>
 
-    <!-- KEY TAKEAWAYS -->
+    <!-- TAKEAWAYS -->
     <section class="project-detail-section">
 
         <h2>Key Takeaways</h2>
 
         <p>
             This project demonstrates the integration
-            of computer vision, feedback control,
-            and robotic motion for automated
-            object alignment.
+            of computer vision and robotic motion
+            for automated object alignment.
         </p>
 
         <p>
-            The system combines contour-based target
-            detection, position error calculation,
-            MQTT communication, PID control, and
-            incremental robot movement into a
-            closed-loop alignment workflow.
+            It combines image processing,
+            contour-based target detection,
+            pixel displacement calculation,
+            network communication, and bounded
+            robotic movement into a single workflow.
         </p>
 
     </section>
 
-    <!-- BACK NAVIGATION -->
+    <!-- NAVIGATION -->
     <div class="project-detail-footer">
         <a href="../index.html#work">← All Projects</a>
         <a href="../index.html">Home</a>
     </div>
 
 </article>
-
 </main>
 
 <footer>
