@@ -150,7 +150,7 @@ nav {
 
     margin: auto;
 
-    padding: 100px 6%;
+    padding: 70px 6%;
 
     display: flex;
 
@@ -340,7 +340,7 @@ h1 {
 
     margin: auto;
 
-    padding: 50px 6%;
+    padding: 70px 6%;
 
     display: grid;
 
@@ -410,7 +410,7 @@ h1 {
 
     margin: auto;
 
-    padding: 110px 6%;
+    padding: 70px 6%;
 
 }
 
@@ -752,7 +752,7 @@ h2 {
 
     text-align: center;
 
-    padding: 130px 6%;
+    padding: 70px 6%;
 
     border-top: 1px solid #ddd;
 
@@ -1194,6 +1194,12 @@ footer {
 
     }
 
+    .metrics,
+    .contact {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
 }
 
 
@@ -1205,8 +1211,6 @@ footer {
    MOBILE
 
 ========================= */
-
-
 
 @media (max-width: 700px) {
 
@@ -1236,7 +1240,7 @@ footer {
 
         gap: 35px;
 
-        padding: 65px 6% 70px;
+        padding: 45px 6%;
 
     }
 
@@ -1312,7 +1316,7 @@ footer {
 
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        padding: 25px 6%;
+        padding: 45px 6%;
 
     }
 
@@ -1356,7 +1360,7 @@ footer {
 
     .section {
 
-        padding: 75px 6%;
+        padding: 45px 6%;
 
     }
 
@@ -1456,7 +1460,7 @@ footer {
 
     .contact {
 
-        padding: 85px 6%;
+        padding: 45px 6%;
 
     }
 
@@ -1692,97 +1696,6 @@ footer {
     }
 }
 
-
-/* Compact spacing from Featured Work onward (homepage only) */
-#work,
-#education,
-#experience,
-#experience ~ .section {
-    padding-top: 55px;
-    padding-bottom: 55px;
-}
-
-#work h2,
-#education h2,
-#experience h2,
-#experience ~ .section h2 {
-    margin-bottom: 30px;
-}
-
-#work .projects {
-    gap: 18px;
-}
-
-#education .experience,
-#experience .experience {
-    padding-top: 24px;
-    gap: 40px;
-}
-
-#education .experience + .experience,
-#experience .experience + .experience {
-    margin-top: 26px;
-}
-
-#experience ~ .contact,
-#contact {
-    padding-top: 65px;
-    padding-bottom: 65px;
-}
-
-@media (max-width: 900px) {
-    #work, #education, #experience, #experience ~ .section {
-        padding-top: 45px;
-        padding-bottom: 45px;
-    }
-}
-
-@media (max-width: 700px) {
-    #work, #education, #experience, #experience ~ .section {
-        padding-top: 36px;
-        padding-bottom: 36px;
-    }
-    #work h2, #education h2, #experience h2,
-    #experience ~ .section h2 {
-        margin-bottom: 24px;
-    }
-    #work .projects { gap: 15px; }
-    #education .experience, #experience .experience {
-        padding-top: 20px;
-        gap: 20px;
-    }
-    #contact { padding-top: 48px; padding-bottom: 48px; }
-}
-
-/* Portfolio compact layout v2: intentionally more noticeable */
-#work, #education, #experience, #experience ~ .section {
-    padding-top: 28px;
-    padding-bottom: 28px;
-}
-#work h2, #education h2, #experience h2, #experience ~ .section h2 {
-    margin-bottom: 18px;
-}
-#work .eyebrow, #education .eyebrow, #experience .eyebrow, #experience ~ .section .eyebrow {
-    margin-bottom: 8px;
-}
-#work .projects { gap: 12px; }
-#work .project-image { height: 205px; }
-#work .project-content { padding: 18px; }
-#work .project-content h3 { margin-bottom: 8px; }
-#work .project-number { margin-bottom: 7px; }
-#work .tags { margin-top: 12px; }
-#work .project-link { margin-top: 12px; }
-#education .experience, #experience .experience { padding-top: 16px; gap: 24px; }
-#education .experience + .experience, #experience .experience + .experience { margin-top: 14px; }
-#education .experience p, #experience .experience p { margin-bottom: 10px; }
-#contact { padding-top: 35px; padding-bottom: 35px; }
-#contact h2 { margin-bottom: 22px; }
-@media (max-width: 700px) {
-    #work, #education, #experience, #experience ~ .section { padding-top: 24px; padding-bottom: 24px; }
-    #work .project-image { height: 190px; }
-    #work .project-content { padding: 16px; }
-    #work .projects { gap: 12px; }
-}
 
 /* =========================
    EARLIER EXPERIENCE
