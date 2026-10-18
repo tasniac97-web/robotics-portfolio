@@ -54,11 +54,22 @@
         .workflow-step span { display: block; font-size: 12px; color: #666; }
         .workflow-arrow { align-self: center; flex-shrink: 0; font-size: 22px; }
 
+        /* Show the entire RoboDK hero image without cropping. */
+        .project-detail-hero {
+            height: auto !important;
+            max-height: none !important;
+            overflow: visible !important;
+            aspect-ratio: auto !important;
+        }
+
         .project-detail-hero img {
             display: block;
-            width: 100%;
-            height: auto;
-            object-fit: contain;
+            width: 100% !important;
+            height: auto !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            object-position: center !important;
         }
 
         .project-media { margin: 30px 0; width: 100%; }
@@ -564,6 +575,31 @@
                         <strong>Automated</strong>
                         <span>Validation process</span>
                     </div>
+                </div>
+            </section>
+
+            <!-- RESEARCH REFERENCE AND ATTRIBUTION -->
+            <section class="project-detail-section">
+                <h2>Research Reference and Attribution</h2>
+
+                <p>
+                    Parts of the concepts and code used in this project were
+                    adapted from the research paper cited below, including
+                    approaches to free-space graph path planning and
+                    robot-level validation in RoboDK.
+                </p>
+
+                <div class="technical-note">
+                    <strong>Reference:</strong><br>
+                    Cristoiu CA, Drăgoi M-V, Nechita R-M, Verdete B-M,
+                    Dudici CL, Cusma CN. Python Software Application for
+                    Obstacle-Avoiding Path Planning in RoboDK Using Free Space
+                    Graph and Robot Level Validation.
+                    <em>Applied Sciences.</em> 2026; 16(10):4786.<br>
+                    <a href="https://doi.org/10.3390/app16104786"
+                       target="_blank" rel="noopener noreferrer">
+                        https://doi.org/10.3390/app16104786
+                    </a>
                 </div>
             </section>
 
