@@ -77,14 +77,19 @@
         }
 
         /* Images for A* and inverse kinematics */
-        .technical-image {
+        .project-media img.technical-image {
             display: block;
             width: 100%;
-            max-width: 820px;
+            max-width: 380px;
             height: auto;
+            margin: 0 auto;
             object-fit: contain;
             border: 1px solid #ddd;
             background: white;
+        }
+
+        .project-media:has(.technical-image) figcaption {
+            text-align: center;
         }
 
         .project-demo-video {
@@ -214,7 +219,7 @@
             <!-- HERO IMAGE -->
             <div class="project-detail-hero">
                 <img
-                    src="../assets/images/robodk_project_images/robodk-hero.jpg"
+                    src="../assets/images/robodk_project_images/robodk.jpg"
                     alt="RoboDK robot trajectory planning simulation">
             </div>
 
