@@ -1,406 +1,404 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tasnia Chowdhury is a Robotics Engineer specializing in robotics, automation, system integration, and deployment.">
-    <title>Tasnia Chowdhury | Robotics Engineer</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Tasnia Chowdhury is a Robotics Engineer specializing in robotics, automation, system integration, and deployment." name="description"/>
+<title>
+   Tasnia Chowdhury | Robotics Engineer
+  </title>
+<link href="style.css" rel="stylesheet"/>
 </head>
-
 <body>
-
 <header>
-    <nav>
-        <a href="#" class="logo">TC</a>
-
-        <div class="nav-links">
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+<nav>
+<a class="logo" href="#">
+     TC
+    </a>
+<div class="nav-links">
+<a href="#work">
+      Work
+     </a>
+<a href="#about">
+      About
+     </a>
+<a href="#education">Education</a><a href="#experience">
+      Experience
+     </a>
+<a href="#contact">
+      Contact
+     </a>
+</div>
+</nav>
 </header>
-
 <main>
-
-    <!-- HERO -->
-    <section class="hero">
-
-        <div class="hero-text">
-            <p class="eyebrow">ROBOTICS ENGINEER</p>
-
-            <h1>Building robotic systems for the real world.</h1>
-
-            <p class="hero-description">
-                Robotics engineer with 5+ years of experience
-                designing, integrating, commissioning, and deploying
-                robotic automation systems.
-            </p>
-
-            <div class="buttons">
-                <a href="#work" class="button primary">View My Work</a>
-
-                <a href="resume/Tasnia_Chowdhury_Resume.pdf"
-                   class="button secondary">Resume</a>
-            </div>
-        </div>
-
-        <div class="hero-image">
-            <img src="assets/images/profile.jpg"
-                 alt="Tasnia Chowdhury, Robotics Engineer">
-        </div>
-
-    </section>
-
-    <!-- METRICS -->
-    <section class="metrics">
-
-        <div>
-            <strong>5+</strong>
-            <span>Years Experience</span>
-        </div>
-
-        <div>
-            <strong>100+</strong>
-            <span>Robot Arms</span>
-        </div>
-
-        <div>
-            <strong>5+</strong>
-            <span>Fully Automated Systems</span>
-        </div>
-
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="work" class="section">
-
-        <p class="eyebrow">FEATURED WORK</p>
-        <h2>Projects</h2>
-
-        <div class="projects">
-
-            <!-- PROJECT 01 -->
-            <article class="project-card">
-
-                <a href="projects/opencv-robot.html"
-                   class="project-image project-image-link"
-                   aria-label="View OpenCV Robot Camera Perception project">
-                    <img src="assets/images/opencv-robot.jpg"
-                         alt="OpenCV robot camera perception system"
-                         loading="lazy">
-                </a>
-
-                <div class="project-content">
-
-                    <p class="project-number">01</p>
-
-                    <h3>OpenCV Robot Camera Perception</h3>
-
-                    <p>
-                        Developed a camera-based perception system using
-                        OpenCV to detect and locate a plate, calculate its
-                        position relative to the robot, and control the
-                        robot arm to move to and grip the object.
-                    </p>
-
-                    <div class="tags">
-                        <span>OpenCV</span>
-                        <span>Camera Vision</span>
-                        <span>Embedded System</span>
-                        <span>Robot Control</span>
-                    </div>
-
-                    <a href="projects/opencv-robot.html"
-                       class="project-link">
-                        View Project <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-            <!-- PROJECT 02 -->
-            <article class="project-card">
-
-                <a href="projects/robodk-trajectory-planner.html"
-                   class="project-image project-image-link"
-                   aria-label="View RoboDK Trajectory Planner project">
-                    <img src="assets/images/robodk.jpg"
-                         alt="Robot Path Planning"
-                         loading="lazy">
-                </a>
-
-                <div class="project-content">
-
-                    <p class="project-number">02</p>
-
-                    <h3>A* Robot Path Planning in RoboDK simulation</h3>
-
-                    <p>
-                        Developed tool that reads user-defined pick-and-place targets,
-                        constructs a free-space graph, applies A* search to generate candidate trajectories,
-                        and uses RoboDK inverse kinematics and collision checking to validate robot paths.
-                        Validated trajectories are used to automatically generate robot teachpoints
-                        and motion programs.
-                    </p>
-
-                    <div class="tags">
-                        <span>Motion Planning</span>
-                        <span>A* Algorithm</span>
-                        <span>RoboDK</span>
-                        <span>Obstacle Avoidance</span>
-                        <span>Inverse Kinematics</span>
-                    </div>
-
-                    <a href="projects/robodk-trajectory-planner.html"
-                       class="project-link">
-                        View Project <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PROJECT 03 -->
-            <article class="project-card">
-
-                <div class="project-image">
-                    <a href="projects/auto-leveling-robot-arm.html">
-                        <img src="assets/images/auto_leveling_robot_arm/orientation.jpg"
-                            alt="Auto-Leveling Robot Arm using IMU Sensor"
-                            loading="lazy">
-                    </a>
-                </div>
-
-                <div class="project-content">
-
-                    <p class="project-number">03</p>
-
-                    <h3>
-                        <a href="projects/auto-leveling-robot-arm.html">
-                            Auto-Leveling Robot Arm using IMU Sensor
-                        </a>
-                    </h3>
-
-                    <p>
-                        Developed a sensor-driven robotic control system
-                        using a BNO055 IMU sensor, Raspberry Pi, and MQTT
-                        communication to adjust a robot arm's orientation
-                        using real-time sensor feedback.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Raspberry Pi</span>
-                        <span>IoT</span>
-                        <span>Robotics</span>
-                        <span>Sensor Integration</span>
-                    </div>
-
-                    <a href="projects/auto-leveling-robot-arm.html"
-                       class="project-link">
-                        View Project <span aria-hidden="true">→</span>
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <!-- PROJECT 04 -->
-            <article class="project-card">
-
-                <div class="project-image">
-                    <img src="assets/images/infrastructure.jpg"
-                         alt="Robotics deployment infrastructure"
-                         loading="lazy">
-                </div>
-
-                <div class="project-content">
-
-                    <p class="project-number">04</p>
-
-                    <h3>Deployment Infrastructure</h3>
-
-                    <p>
-                        Automated networking and hardware deployment
-                        workflows, reducing deployment time by 90%.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Networking</span>
-                        <span>Linux</span>
-                        <span>Automation</span>
-                    </div>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section about">
-
-        <p class="eyebrow">ABOUT</p>
-        <h2>Engineer. Integrator. Builder.</h2>
-
-        <p>
-            I'm a Robotics Engineer with experience building and
-            deploying autonomous robotic systems. My work spans
-            robotics, automation, hardware integration, software,
-            controls, networking, validation, and field deployment.
-        </p>
-
-        <p>
-            I enjoy working at the intersection of hardware and
-            software and taking systems from an engineering concept
-            through integration, commissioning, and production.
-        </p>
-
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section">
-
-        <p class="eyebrow">TECHNICAL SKILLS</p>
-
-        <div class="skills-grid">
-
-            <div>
-                <h3>Robotics</h3>
-                <p>
-                    Industrial Robots<br>
-                    Robot Commissioning<br>
-                    RoboDK<br>
-                    Motion Planning
-                </p>
-            </div>
-
-            <div>
-                <h3>Automation</h3>
-                <p>
-                    Beckhoff TwinCAT<br>
-                    PLCs<br>
-                    Material Handling
-                </p>
-            </div>
-
-            <div>
-                <h3>Software</h3>
-                <p>
-                    Python<br>
-                    Git<br>
-                    Linux<br>
-                    ROS<br>
-                    SQL
-                </p>
-            </div>
-
-            <div>
-                <h3>Systems</h3>
-                <p>
-                    Hardware Integration<br>
-                    Networking<br>
-                    Validation<br>
-                    Customer Deployment
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-
-        <p class="eyebrow">EXPERIENCE</p>
-
-        <div class="experience">
-
-            <div>
-                <h3>Ginkgo Bioworks</h3>
-                <p>Robotics Engineer · 2021–Present</p>
-            </div>
-
-            <div>
-                <p>
-                    Designed and deployed robotic automation systems
-                    for external customers, integrating robot arms,
-                    laboratory instruments, software, controls,
-                    networking, and material handling systems.
-                </p>
-
-                <p>
-                    Led system commissioning, acceptance testing,
-                    customer deployments, troubleshooting, and
-                    cross-functional engineering efforts.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="experience">
-
-            <div>
-                <h3>ARoboticsCompany</h3>
-                <p>Robotics Intern · Sep 2020–Jan 2021</p>
-            </div>
-
-            <div>
-                <p>
-                    Configured and integrated industrial robotic systems,
-                    including robot wiring, motor controls, encoders,
-                    and sensor hardware such as IMUs and LiDAR.
-                </p>
-
-                <p>
-                    Developed Python-based robot control interfaces,
-                    supported real-time robotic arm simulation,
-                    and performed field testing and troubleshooting
-                    to resolve issues before deployment.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-
-        <p class="eyebrow">GET IN TOUCH</p>
-        <h2>Let's build together.</h2>
-
-        <div class="contact-links">
-            <a href="mailto:tasniac97@gmail.com">Email</a>
-
-            <a href="https://www.linkedin.com/tasniac97"
-               target="_blank"
-               rel="noopener noreferrer">LinkedIn</a>
-
-            <a href="https://github.com/"
-               target="_blank"
-               rel="noopener noreferrer">GitHub</a>
-        </div>
-
-    </section>
-
+<!-- HERO -->
+<!-- METRICS -->
+<!-- PROJECTS -->
+<!-- ABOUT -->
+<!-- SKILLS -->
+<!-- EXPERIENCE -->
+<!-- CONTACT -->
+<section class="hero">
+<div class="hero-text">
+<p class="eyebrow">
+      ROBOTICS ENGINEER
+     </p>
+<h1>
+      Building robotic systems for the real world.
+     </h1>
+<div class="buttons">
+<a class="button primary" href="#work">
+       View My Work
+      </a>
+<a class="button secondary" href="resume/Tasnia_Chowdhury_Resume.pdf">
+       Resume
+      </a>
+</div>
+</div>
+<div class="hero-image">
+<img alt="Tasnia Chowdhury, Robotics Engineer" src="assets/images/profile.jpg"/>
+</div>
+</section>
+<section class="section about" id="about">
+<p class="eyebrow">
+     ABOUT
+    </p>
+<h2>
+     Engineer. Integrator. Builder.
+    </h2>
+<p>
+     I'm a Robotics Engineer with 5+ years experience designing and deploying autonomous robotic systems. My work spans robotics, automation, hardware integration, software, controls, networking, validation, and field deployment.
+    </p>
+<p>
+     I enjoy working at the intersection of hardware and software and taking systems from an engineering concept through integration, commissioning, and production.
+    </p>
+</section>
+<section class="metrics">
+<div>
+<strong>
+      5+
+     </strong>
+<span>
+      Years Experience
+     </span>
+</div>
+<div>
+<strong>
+      100+
+     </strong>
+<span>
+      Robot Arms
+     </span>
+</div>
+<div>
+<strong>
+      5+
+     </strong>
+<span>
+      Fully Automated Systems
+     </span>
+</div>
+</section>
+<section class="section" id="work">
+<p class="eyebrow">
+     FEATURED WORK
+    </p>
+<h2>
+     Projects
+    </h2>
+<div class="projects">
+<article class="project-card">
+<a aria-label="View OpenCV Robot Camera Perception project" class="project-image project-image-link" href="projects/opencv-robot.html">
+<img alt="OpenCV Robot Camera Perception" loading="lazy" src="assets/images/opencv-robot.jpg"/>
+</a>
+<div class="project-content">
+<p class="project-number">
+        01
+       </p>
+<h3>
+        OpenCV Robot Camera Perception
+       </h3>
+<p>
+        Developed a camera-based perception system using OpenCV to detect and locate a plate, calculate its position relative to the robot, and control the robot arm to move to and grip the object.
+       </p>
+<div class="tags">
+<span>
+         OpenCV
+        </span>
+<span>
+         Camera Vision
+        </span>
+<span>
+         Embedded System
+        </span>
+<span>
+         Robot Control
+        </span>
+</div>
+<a class="project-link" href="projects/opencv-robot.html">
+        View Project
+        <span aria-hidden="true">
+         →
+        </span>
+</a>
+</div>
+</article>
+<article class="project-card">
+<a aria-label="View A* Robot Path Planning in RoboDK simulation project" class="project-image project-image-link" href="projects/robodk-trajectory-planner.html">
+<img alt="A* Robot Path Planning in RoboDK simulation" loading="lazy" src="assets/images/robodk.jpg"/>
+</a>
+<div class="project-content">
+<p class="project-number">
+        02
+       </p>
+<h3>
+        A* Robot Path Planning in RoboDK simulation
+       </h3>
+<p>
+        Developed tool that reads user-defined pick-and-place targets, constructs a free-space graph, applies A* search to generate candidate trajectories, and uses RoboDK inverse kinematics and collision checking to validate robot paths. Validated trajectories are used to automatically generate robot teachpoints and motion programs.
+       </p>
+<div class="tags">
+<span>
+         Motion Planning
+        </span>
+<span>
+         A* Algorithm
+        </span>
+<span>
+         RoboDK
+        </span>
+<span>
+         Obstacle Avoidance
+        </span>
+<span>
+         Inverse Kinematics
+        </span>
+</div>
+<a class="project-link" href="projects/robodk-trajectory-planner.html">
+        View Project
+        <span aria-hidden="true">
+         →
+        </span>
+</a>
+</div>
+</article>
+<article class="project-card">
+<a aria-label="View Auto-Leveling Robot Arm using IMU Sensor project" class="project-image project-image-link" href="projects/auto-leveling-robot-arm.html">
+<img alt="Auto-Leveling Robot Arm using IMU Sensor" loading="lazy" src="assets/images/auto_leveling_robot_arm/orientation.jpg"/>
+</a>
+<div class="project-content">
+<p class="project-number">
+        03
+       </p>
+<h3>
+        Auto-Leveling Robot Arm using IMU Sensor
+       </h3>
+<p>
+        Developed a sensor-driven robotic control system using a BNO055 IMU sensor, Raspberry Pi, and MQTT communication to adjust a robot arm's orientation using real-time sensor feedback.
+       </p>
+<div class="tags">
+<span>
+         Python
+        </span>
+<span>
+         Raspberry Pi
+        </span>
+<span>
+         IoT
+        </span>
+<span>
+         Robotics
+        </span>
+<span>
+         Sensor Integration
+        </span>
+</div>
+<a class="project-link" href="projects/auto-leveling-robot-arm.html">
+        View Project
+        <span aria-hidden="true">
+         →
+        </span>
+</a>
+</div>
+</article>
+<article class="project-card">
+<div class="project-image">
+<img alt="Deployment Infrastructure" loading="lazy" src="assets/images/infrastructure.jpg"/>
+</div>
+<div class="project-content">
+<p class="project-number">
+        04
+       </p>
+<h3>
+        Deployment Infrastructure
+       </h3>
+<p>
+        Automated networking and hardware deployment workflows, reducing deployment time by 90%.
+       </p>
+<div class="tags">
+<span>
+         Python
+        </span>
+<span>
+         Networking
+        </span>
+<span>
+         Linux
+        </span>
+<span>
+         Automation
+        </span>
+</div>
+</div>
+</article>
+</div>
+</section>
+<section class="section" id="education">
+<p class="eyebrow">EDUCATION</p>
+<h2>Education</h2>
+<div class="experience">
+<div><h3>Columbia University</h3><p>Master of Science in Mechanical Engineering (Robotics) · December 2020</p></div>
+<div><p>New York, NY</p></div>
+</div>
+<div class="experience">
+<div><h3>Drexel University</h3><p>Bachelor of Science in Mechanical Engineering · June 2019</p></div>
+<div><p>Philadelphia, PA</p></div>
+</div>
+</section><section class="section" id="experience">
+<p class="eyebrow">
+     EXPERIENCE
+    </p>
+<div class="experience">
+<div>
+<h3>
+       Ginkgo Bioworks
+      </h3>
+<p>
+       Robotics Engineer · 2021–Present
+      </p>
+</div>
+<div>
+<p>
+       Designed and deployed robotic automation systems for external customers, integrating robot arms, laboratory instruments, software, controls, networking, and material handling systems.
+      </p>
+<p>
+       Led system commissioning, acceptance testing, customer deployments, troubleshooting, and cross-functional engineering efforts.
+      </p>
+</div>
+</div>
+<div class="experience">
+<div>
+<h3>
+       ARoboticsCompany
+      </h3>
+<p>
+       Robotics Intern · September 2020 – January 2021
+      </p>
+</div>
+<div>
+<p>
+       Configured and integrated industrial robotic systems, including motor controls, encoders, and sensor hardware such as IMUs and LiDAR.
+      </p>
+<p>
+       Developed Python-based robot control interfaces and supported real-time robotic arm simulation.
+      </p>
+<p>
+       Performed field testing and troubleshooting to resolve issues before deployment.
+      </p>
+</div>
+</div>
+</section>
+<section class="section">
+<p class="eyebrow">
+     TECHNICAL SKILLS
+    </p>
+<div class="skills-grid">
+<div>
+<h3>
+       Robotics
+      </h3>
+<p>
+       Industrial Robots
+       <br/>
+       Robot Commissioning
+       <br/>
+       RoboDK
+       <br/>
+       Motion Planning
+      </p>
+</div>
+<div>
+<h3>
+       Automation
+      </h3>
+<p>
+       Beckhoff TwinCAT
+       <br/>
+       PLCs
+       <br/>
+       Material Handling
+      </p>
+</div>
+<div>
+<h3>
+       Software
+      </h3>
+<p>
+       Python
+       <br/>
+       Git
+       <br/>
+       Linux
+       <br/>
+       ROS
+       <br/>
+       SQL
+      </p>
+</div>
+<div>
+<h3>
+       Systems
+      </h3>
+<p>
+       Hardware Integration
+       <br/>
+       Networking
+       <br/>
+       Validation
+       <br/>
+       Customer Deployment
+      </p>
+</div>
+</div>
+</section>
+<section class="contact" id="contact">
+<p class="eyebrow">
+     GET IN TOUCH
+    </p>
+<h2>
+     Let's build together.
+    </h2>
+<div class="contact-links">
+<a href="mailto:tasniac97@gmail.com">
+      Email
+     </a>
+<a href="https://www.linkedin.com/tasniac97" rel="noopener noreferrer" target="_blank">
+      LinkedIn
+     </a>
+<a href="https://github.com/" rel="noopener noreferrer" target="_blank">
+      GitHub
+     </a>
+</div>
+</section>
 </main>
-
 <footer>
-    <p>© 2026 Tasnia Chowdhury</p>
+<p>
+    © 2026 Tasnia Chowdhury
+   </p>
 </footer>
-
-<script src="script.js"></script>
-
+<script src="script.js">
+</script>
 </body>
 </html>
