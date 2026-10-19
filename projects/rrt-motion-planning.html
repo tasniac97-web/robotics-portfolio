@@ -8,7 +8,7 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="RRT Motion Planning and Obstacle Avoidance for a KUKA robotic arm using ROS and Python.">
+          content="RRT Motion Planning and Obstacle Avoidance for a KUKA robotic arm using ROS MoveIt.">
 
     <title>
         RRT Motion Planning | Robotics Portfolio
@@ -53,11 +53,10 @@
             </h1>
 
             <p class="project-detail-intro">
-                Developed a Rapidly-exploring Random Tree
-                (RRT) motion planning algorithm in ROS
-                and Python to generate and execute
-                collision-free paths for a simulated
-                KUKA robotic arm navigating around obstacles.
+                Used the Rapidly-exploring Random Tree
+                (RRT) algorithm in a ROS MoveIt
+                simulation to plan obstacle-avoiding
+                motion for a KUKA robotic arm.
             </p>
 
         </div>
@@ -66,45 +65,30 @@
         <div class="project-detail-hero">
             <img
                 src="../assets/images/rrt.jpg"
-                alt="KUKA robotic arm motion planning around obstacles"
+                alt="KUKA robotic arm navigating around obstacles in simulation"
             >
         </div>
 
         <!-- RRT EXPLANATION -->
         <section class="project-detail-section">
 
-            <h2>Rapidly-exploring Random Tree (RRT)</h2>
+            <h2>
+                Rapidly-exploring Random Tree (RRT)
+            </h2>
 
             <p>
-                Rapidly-exploring Random Tree (RRT) is a
-                sampling-based motion planning algorithm
-                used to find feasible paths through
-                complex environments.
+                Rapidly-exploring Random Tree (RRT)
+                incrementally builds a tree by randomly
+                sampling configurations in the robot's
+                configuration space.
             </p>
 
             <p>
-                Instead of searching every possible robot
-                configuration, RRT incrementally builds
-                a tree by randomly sampling configurations
-                in the robot's configuration space.
-                This makes it particularly useful for
-                robotic manipulators with multiple
-                degrees of freedom.
-            </p>
-
-            <p>
-                The algorithm starts at the robot's
-                initial joint configuration and expands
-                toward randomly sampled configurations.
-                Each new connection is checked for
+                The starting point is the robot's initial
+                joint configuration. The tree expands
+                toward randomly sampled configurations,
+                and each new connection is checked for
                 collisions with obstacles.
-            </p>
-
-            <p>
-                The tree continues expanding until it
-                reaches the desired goal configuration,
-                producing a sequence of configurations
-                that the robot can follow.
             </p>
 
             <h3>RRT Algorithm Steps</h3>
@@ -114,94 +98,36 @@
                        color: #555;">
 
                 <li style="margin-bottom: 10px;">
-                    <strong>Initialize:</strong>
-                    Start the tree at the robot's initial
-                    joint configuration.
+                    Initialize the tree at the robot's
+                    starting configuration.
                 </li>
 
                 <li style="margin-bottom: 10px;">
-                    <strong>Random Sampling:</strong>
-                    Generate a random configuration
+                    Sample a random configuration
                     within the robot's joint limits.
                 </li>
 
                 <li style="margin-bottom: 10px;">
-                    <strong>Nearest Neighbor:</strong>
-                    Identify the closest existing node
+                    Find the nearest existing node
                     in the tree.
                 </li>
 
                 <li style="margin-bottom: 10px;">
-                    <strong>Tree Expansion:</strong>
-                    Extend the tree from the nearest
-                    node toward the sampled configuration.
+                    Extend the tree toward the sampled
+                    configuration by a preset distance.
                 </li>
 
                 <li style="margin-bottom: 10px;">
-                    <strong>Collision Checking:</strong>
-                    Validate that the new motion segment
-                    does not intersect obstacles.
+                    Check the new motion segment
+                    for collisions.
                 </li>
 
                 <li style="margin-bottom: 10px;">
-                    <strong>Goal Connection:</strong>
-                    Repeat the process until the tree
-                    reaches the goal region and a valid
-                    path can be reconstructed.
+                    Repeat until the goal is reached
+                    and reconstruct the path.
                 </li>
 
             </ol>
-
-            <p style="margin-top: 20px;">
-                RRT is probabilistically complete under
-                standard assumptions, meaning that if
-                a feasible path exists, the probability
-                of finding one approaches 1 as the
-                number of samples increases.
-                However, a basic RRT does not guarantee
-                the shortest or optimal path.
-            </p>
-
-        </section>
-
-        <!-- ROS MOVEIT SIMULATION -->
-        <section class="project-detail-section">
-
-            <h2>ROS MoveIt Simulation</h2>
-
-            <p>
-                ROS (Robot Operating System) provides
-                a software framework for robot control,
-                communication, and motion planning.
-                MoveIt is a ROS-based framework that
-                supports robot kinematics, collision
-                checking, trajectory planning, and
-                execution.
-            </p>
-
-            <p>
-                A KUKA robotic arm can be represented
-                in MoveIt using a robot model containing
-                its joint definitions, kinematic structure,
-                and collision geometry.
-            </p>
-
-            <p>
-                The simulation environment contains
-                obstacles that the robot must navigate
-                around while moving between configurations.
-                Inverse kinematics converts a desired
-                end-effector pose into a target
-                joint-space configuration.
-            </p>
-
-            <p>
-                A motion planner then searches for a
-                collision-free path between the initial
-                and target configurations. The resulting
-                trajectory can be visualized in RViz
-                and executed in a simulated environment.
-            </p>
 
         </section>
 
@@ -211,24 +137,24 @@
             <h2>Technical Approach</h2>
 
             <p>
-                I implemented an RRT motion planning
-                algorithm in Python using ROS to generate
-                paths for a simulated KUKA robotic arm.
+                A KUKA robotic arm was configured in
+                ROS MoveIt with its joint limits,
+                link lengths, and surrounding obstacles.
+                Start and goal configurations were
+                defined for the motion planning task.
             </p>
 
             <p>
                 Inverse kinematics was applied to obtain
                 the desired goal configuration in joint
-                space. The RRT algorithm then explored
-                possible configurations to generate a
-                path toward the target while avoiding
-                obstacles.
+                space.
             </p>
 
             <p>
-                The planned motion was executed in a
-                simulated environment containing the
-                KUKA robotic arm and surrounding obstacles.
+                The RRT algorithm then explored possible
+                robot configurations to generate a path
+                toward the target while avoiding
+                obstacles.
             </p>
 
         </section>
@@ -252,8 +178,9 @@
                 >
 
                 <figcaption>
-                    Simulated KUKA robotic arm configurations
-                    during obstacle avoidance.
+                    Simulated KUKA robotic arm
+                    configurations during obstacle
+                    avoidance.
                 </figcaption>
 
             </figure>
