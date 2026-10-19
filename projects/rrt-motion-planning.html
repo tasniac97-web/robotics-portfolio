@@ -53,9 +53,9 @@
             </h1>
 
             <p class="project-detail-intro">
-                Developed a Rapid Random Tree
+                Developed a Rapidly-exploring Random Tree
                 (RRT) motion planning algorithm in ROS
-                to generate and execute
+                and Python to generate and execute
                 collision-free paths for a simulated
                 KUKA robotic arm navigating around obstacles.
             </p>
@@ -71,31 +71,206 @@
         </div>
 
 
+        <!-- RRT EXPLANATION -->
+        <section class="project-detail-section">
+
+            <h2>Rapidly-exploring Random Tree (RRT)</h2>
+
+            <p>
+                Rapidly-exploring Random Tree (RRT) is a
+                sampling-based motion planning algorithm
+                used to find feasible paths through
+                complex environments.
+            </p>
+
+            <p>
+                Instead of searching every possible robot
+                configuration, RRT incrementally builds
+                a tree by randomly sampling configurations
+                in the robot's configuration space.
+                This makes it particularly useful for
+                robotic manipulators with multiple
+                degrees of freedom.
+            </p>
+
+            <p>
+                The algorithm starts at the robot's
+                initial joint configuration and expands
+                toward randomly sampled configurations.
+                Each new connection is checked for
+                collisions with obstacles.
+            </p>
+
+            <p>
+                The tree continues expanding until it
+                reaches the desired goal configuration,
+                producing a sequence of configurations
+                that the robot can follow.
+            </p>
+
+            <h3>RRT Algorithm Steps</h3>
+
+            <ol style="padding-left: 24px; margin-top: 15px; color: #555;">
+
+                <li style="margin-bottom: 10px;">
+                    <strong>Initialize:</strong>
+                    Start the tree at the robot's initial
+                    joint configuration.
+                </li>
+
+                <li style="margin-bottom: 10px;">
+                    <strong>Random Sampling:</strong>
+                    Generate a random configuration
+                    within the robot's joint limits.
+                </li>
+
+                <li style="margin-bottom: 10px;">
+                    <strong>Nearest Neighbor:</strong>
+                    Identify the closest existing node
+                    in the tree.
+                </li>
+
+                <li style="margin-bottom: 10px;">
+                    <strong>Tree Expansion:</strong>
+                    Extend the tree from the nearest
+                    node toward the sampled configuration.
+                </li>
+
+                <li style="margin-bottom: 10px;">
+                    <strong>Collision Checking:</strong>
+                    Validate that the new motion segment
+                    does not intersect obstacles.
+                </li>
+
+                <li style="margin-bottom: 10px;">
+                    <strong>Goal Connection:</strong>
+                    Repeat the process until the tree
+                    reaches the goal region and a valid
+                    path can be reconstructed.
+                </li>
+
+            </ol>
+
+            <p style="margin-top: 20px;">
+                RRT is probabilistically complete under
+                standard assumptions, meaning that if
+                a feasible path exists, the probability
+                of finding one approaches 1 as the
+                number of samples increases.
+                However, a basic RRT does not guarantee
+                the shortest or optimal path.
+            </p>
+
+        </section>
+
+
+        <!-- ROS MOVEIT SIMULATION -->
+        <section class="project-detail-section">
+
+            <h2>ROS MoveIt Simulation</h2>
+
+            <p>
+                ROS (Robot Operating System) provides
+                a software framework for robot control,
+                communication, and motion planning.
+                MoveIt is a ROS-based framework that
+                supports robot kinematics, collision
+                checking, trajectory planning, and
+                execution.
+            </p>
+
+            <p>
+                In a typical MoveIt simulation workflow,
+                a KUKA robotic arm is represented using
+                a robot model containing its joint
+                definitions, kinematic structure,
+                and collision geometry.
+            </p>
+
+            <p>
+                The planning environment includes
+                obstacles that the robot must avoid
+                while moving between configurations.
+                Inverse kinematics can be used to
+                convert a desired end-effector pose
+                into a target joint configuration.
+            </p>
+
+            <p>
+                A motion planner then searches for a
+                collision-free trajectory between
+                the start and goal configurations.
+                The resulting motion can be visualized
+                and executed in the ROS simulation.
+            </p>
+
+            <div class="project-detail-grid"
+                 style="margin-top: 30px;">
+
+                <div class="detail-panel">
+
+                    <h3>Simulation Components</h3>
+
+                    <ul>
+                        <li>KUKA robotic arm model</li>
+                        <li>ROS</li>
+                        <li>MoveIt motion planning framework</li>
+                        <li>Robot joint configurations</li>
+                        <li>Obstacle geometry</li>
+                        <li>Trajectory visualization</li>
+                    </ul>
+
+                </div>
+
+                <div class="detail-panel">
+
+                    <h3>Motion Planning Workflow</h3>
+
+                    <ul>
+                        <li>Define the start configuration</li>
+                        <li>Specify the desired robot goal</li>
+                        <li>Calculate inverse kinematics</li>
+                        <li>Generate a collision-free path</li>
+                        <li>Visualize the planned trajectory</li>
+                        <li>Execute the simulated motion</li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
         <!-- IMPLEMENTATION -->
         <section class="project-detail-section">
 
             <h2>Technical Approach</h2>
 
             <p>
-                The motion planning process used RRT
-                to explore possible robot configurations
-                and generate paths around obstacles.
+                I implemented an RRT motion planning
+                algorithm in Python using ROS to
+                generate paths for a simulated KUKA
+                robotic arm.
             </p>
 
             <p>
                 Inverse kinematics was applied to obtain
                 the desired goal configuration in joint
-                space. The planning algorithm then
-                generated a path toward that configuration.
+                space. The RRT algorithm then explored
+                possible configurations to generate a
+                path toward the target while avoiding
+                obstacles.
             </p>
 
             <p>
                 The planned motion was executed in a
-                simulated environment containing a
+                simulated environment containing the
                 KUKA robotic arm and surrounding obstacles.
             </p>
 
         </section>
+
 
         <!-- RESULTS -->
         <section class="project-detail-section">
@@ -103,7 +278,8 @@
             <h2>Simulation Results</h2>
 
             <p>
-                The robot arm was able to successfully avoid obstacles and reach its destination.
+                The robot arm was able to successfully
+                avoid obstacles and reach its destination.
             </p>
 
             <figure class="project-media">
@@ -122,6 +298,7 @@
             </figure>
 
         </section>
+
 
         <!-- PROJECT FOOTER -->
         <div class="project-detail-footer">
